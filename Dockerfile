@@ -12,9 +12,8 @@ USER $NB_USER
 WORKDIR $HOME
 
 # Install workshop deps
-RUN conda install mdtraj matplotlib -y
-RUN conda install ipywidgets -c conda-forge -y
-RUN pip install mdplus
+RUN conda install matplotlib ipywidgets -y
+RUN pip install mdplus mdtraj
 
 # Get workshop files and move them to jovyan directory.
 RUN git clone https://github.com/CCPBioSim/ubiquitin-analysis-workshop.git && \
